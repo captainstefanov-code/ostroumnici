@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОСТРОУМНИЦИ - Български хумор</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Firebase библиотеки -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <style>
+        /* Малък CSS за съобщенията */
+        .message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Главен контейнер -->
+    <div class="container">
+        <!-- Хедър с лого -->
+        <header class="header">
+            <div class="logo">
+                <h1>🎭 ОСТРОУМНИЦИ</h1>
+                <p class="tagline">Български хумор на едно място!</p>
+            </div>
+        </header>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p>⚠️ <strong>Забележка:</strong> Това приложение е за развлечение. Съдържанието се създава от потребители.</p>
+        </div>
+
+        <!-- Статус на Firebase -->
+        <div class="status-bar" id="statusBar">
+            <p>🔄 Свързване със сървъра...</p>
+        </div>
+
+        <!-- Постове -->
+        <div id="postsContainer" class="posts-container">
+            <div class="loading">🔄 Зареждане на остроумията...</div>
+        </div>
+
+        <!-- Бутон за нов пост -->
+        <button id="newPostBtn" class="new-post-btn">
+            <span class="plus-icon">+</span>
+            <span class="btn-text">Ново остроумие</span>
+        </button>
+
+        <!-- Форма за нов пост -->
+        <div id="postForm" class="post-form-overlay" style="display: none;">
+            <div class="post-form">
+                <h2>✍️ Сподели остроумие</h2>
+                <textarea id="postText" placeholder="Напиши твоята шега, поговорка или остроумие..."></textarea>
+                <select id="postCategory">
+                    <option value="joke">Шега</option>
+                    <option value="proverb">Поговорка</option>
+                    <option value="wordplay">Игра на думи</option>
+                    <option value="observation">Наблюдение</option>
+                    <option value="other">Друго</option>
+                </select>
+                <div class="form-buttons">
+                    <button id="submitBtn" class="submit-btn">Публикувай</button>
+                    <button id="cancelBtn" class="cancel-btn">Отказ</button>
+                </div>
+                <p class="form-info">💡 Постовете се виждат от всички потребители!</p>
+            </div>
+        </div>
+
+        <!-- Футър -->
+        <footer class="footer">
+            <p>© 2024 ОСТРОУМНИЦИ - Български хумор за всички!</p>
+            <p class="footer-note">Сподели смеха с приятели!</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

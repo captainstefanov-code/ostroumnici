@@ -1,0 +1,434 @@
+/* ===== ОСНОВНИ СТИЛОВЕ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== ХЕДЪР ===== */
+.header {
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+}
+
+.logo h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    font-size: 1.2em;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ===== DISCLAIMER ===== */
+.disclaimer {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 15px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    color: #856404;
+}
+
+/* ===== СТАТУС БАР ===== */
+.status-bar {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.status-bar.safe {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.status-bar.warning {
+    background: #fff3cd;
+    color: #856404;
+    border-color: #ffeaa7;
+}
+
+.status-bar.error {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+/* ===== ПОСТОВЕ ===== */
+.posts-container {
+    padding: 20px;
+    min-height: 400px;
+}
+
+.post {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #4CAF50;
+    transition: all 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.post-text {
+    font-size: 1.3em;
+    line-height: 1.5;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* ===== БУТОНИ ЗА ГЛАСУВАНЕ ===== */
+.vote-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.vote-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.vote-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vote-btn.funny {
+    background: linear-gradient(135deg, #FFD166, #FFB347);
+    border-color: #FFD166;
+    color: #856404;
+}
+
+.vote-btn.smart {
+    background: linear-gradient(135deg, #06D6A0, #1B9AAA);
+    border-color: #06D6A0;
+    color: white;
+}
+
+.vote-btn.love {
+    background: linear-gradient(135deg, #EF476F, #FF6B6B);
+    border-color: #EF476F;
+    color: white;
+}
+
+.vote-btn.active {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.vote-count {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* ===== POST META ===== */
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* ===== БУТОН ЗА НОВ ПОСТ ===== */
+.new-post-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    color: white;
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 36px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.new-post-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.6);
+}
+
+/* ===== ФОРМА ЗА ПОСТ ===== */
+.post-form-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-form {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.post-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.post-form textarea {
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    font-size: 1.1em;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    resize: vertical;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.post-form textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.post-form select {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    background: white;
+    cursor: pointer;
+}
+
+.post-form select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.submit-btn, .cancel-btn {
+    flex: 1;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #43a047, #1B5E20);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.cancel-btn {
+    background: linear-gradient(135deg, #f44336, #c62828);
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: linear-gradient(135deg, #e53935, #b71c1c);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+}
+
+/* ===== СЪОБЩЕНИЯ ===== */
+.custom-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    z-index: 10000;
+    animation: slideInMessage 0.5s ease;
+}
+
+@keyframes slideInMessage {
+    from { 
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to { 
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from { 
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to { 
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* ===== ПРАЗЕН СЪСТОЯНИЕ ===== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.empty-state h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* ===== ФУТЪР ===== */
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.footer-note {
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+/* ===== МОБИЛНА ВЕРСИЯ ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        border-radius: 15px;
+    }
+    
+    .logo h1 {
+        font-size: 2.2em;
+    }
+    
+    .vote-buttons {
+        flex-direction: column;
+    }
+    
+    .vote-btn {
+        width: 100%;
+    }
+    
+    .new-post-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    
+    .post-form {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .custom-message {
+        right: 10px;
+        left: 10px;
+        max-width: calc(100% - 20px);
+        text-align: center;
+    }
+}
