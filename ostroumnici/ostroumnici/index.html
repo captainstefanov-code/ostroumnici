@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎭 Остроумници</title>
+    
+    <!-- Firebase Script Tags -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Стилове -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Хедър -->
+        <header class="header">
+            <div class="logo">
+                <h1>🎭 Остроумници</h1>
+                <p class="tagline">Място за шеги, поговорки и наблюдения</p>
+            </div>
+        </header>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><i class="fas fa-info-circle"></i> Този сайт е за забавление. Постовете се проверяват автоматично.</p>
+        </div>
+
+        <!-- Статус бар -->
+        <div id="statusBar" class="status-bar">
+            <p>🟢 Зареждане...</p>
+        </div>
+
+        <!-- Постове -->
+        <div id="postsContainer" class="posts-container">
+            <div class="empty-state">
+                <h3>🎭 Зареждане на остроумията...</h3>
+                <p>Моля изчакайте...</p>
+            </div>
+        </div>
+
+        <!-- Бутон за нов пост -->
+        <button id="newPostBtn" class="new-post-btn">
+            <i class="fas fa-plus"></i>
+        </button>
+
+        <!-- Форма за нов пост -->
+        <div id="postForm" class="post-form-overlay">
+            <div class="post-form">
+                <h2>📝 Добави остроумие</h2>
+                <textarea id="postText" placeholder="Напиши тук шегата, поговорката или наблюдението си..." maxlength="500"></textarea>
+                <select id="postCategory">
+                    <option value="joke">🎭 Шега</option>
+                    <option value="proverb">💬 Поговорка</option>
+                    <option value="observation">👁️ Наблюдение</option>
+                    <option value="other">📌 Друго</option>
+                </select>
+                <div class="form-buttons">
+                    <button id="submitBtn" class="submit-btn">Публикувай</button>
+                    <button id="cancelBtn" class="cancel-btn">Откажи</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Футър -->
+        <footer class="footer">
+            <p>🎭 Остроумници © 2024 | Забавление и мъдрост</p>
+            <p class="footer-note">Всички постове са публични. Използвай с умереност.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript файл -->
+    <script src="./app.js"></script>
+</body>
+</html>
